@@ -7,16 +7,25 @@ Everything beside prints is writtin in Danish and you'll have to translate it yo
 - [Node.js](https://nodejs.org/en/)
 
 ## How to install
-1. Open the terminal and run the following command:
+1. Create your bot under discords developer portal and tick off everything under "Privileged Gateway Intents"
+
+2. Go to OAuth2 > URL Generator
+   - Tick off `applications.commands` and `bot` under "Scopes"
+   - Give your bot `Administrator` under "Bot Permissions"
+   - Invite your bot
+
+3. Open the terminal and run the following command in your bots folder:
    - `npm install`
 
-4. Create following files:
+4. Create the following files:
    - `.env`
    - `config.json`
 
-3. Fill out values in `.env` and `config.json` (example below)
+5. Fill out values in `.env` and `config.json` (example below)
 
-4. Run `start.bat` or use `node src/index.js` or the terminal
+6. Go under src/commands and change permissions of all the commands to your liking
+
+7. Run `start.bat` or use `node src/index.js` in the terminal
 
 ## ENV file example
 ```
