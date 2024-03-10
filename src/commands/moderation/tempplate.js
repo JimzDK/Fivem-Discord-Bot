@@ -67,7 +67,7 @@ module.exports = {
                 interaction.reply('**CK Skabelon**\nVedkommendes ingame navn:\nOplysninger til sagen:\nÅrsag til CK:\nVideobevis (påkrævet for CK):\nJeres relation:');
                 break;
             default:
-                interaction.reply({content: 'En fejl opstod, kontakt Jimz.', ephemeral: true});
+                interaction.reply({content: 'En fejl opstod, kontakt en server Administrator.', ephemeral: true});
                 console.log(`Error during command \"tempplate\"`);
                 break;
         }
