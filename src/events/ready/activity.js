@@ -30,7 +30,7 @@ module.exports = (client) => {
             client.user.setPresence({
                 status: Config.general.activity,
                 activities: [{
-                    name: `Online ${data.clients}/${data.sv_maxclients}`,
+                    name: `Online: ${data.clients}/${data.sv_maxclients}`,
                     type: ActivityType.Watching
                 }]
             })
