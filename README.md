@@ -9,15 +9,15 @@ Bot was originally made for a Danish roleplay server, written in javascript.
    > Prevents everything beside attachments (pictures, videos etc.) from being sent in channels of your choise, ex. for ingame-pictures only channel.
 
 - <b> Supports multiple languages </b>
-   > Create custom support for language under locale folder. Change locale used under config.json
+   > Create custom support for languages under the "locale" folder. Change locale used under config.json.
 
 
 # Moderation Commands
 - <b> /clear \<amount\> </b>
-   > Clear a X amount of messages from a text channel.
+   > Clear X amount of messages from a text channel.
 
 - <b> /lookup \<ingame-id\> </b>
-   > Lookup player identifiers such as discord ID, rockstar license etc.
+   > Lookup player identifiers such as Discord ID or Rockstar license using the FiveM API. (No need to database connection)
 
 - <b> /supportaccess \<user\> \<channel-no\> </b>
    > Temporarily give a user access to screenshare in a support channel (and join, but that's requried after a new discord update). Removes permission after 5 minutes by default.
@@ -26,7 +26,7 @@ Bot was originally made for a Danish roleplay server, written in javascript.
    > Temporarily give a user access to screenshare in a whitelist interview channel (and join, but that's requried after a new discord update). Removes permission after 1.5 minutes by default.
 
 - <b> /tempplate \<type\> </b>
-   > Returns application-tempplate message for a user to fill out, ex. in a ticket.
+   > Returns a application-tempplate message for user to fill out, ex. in a ticket.
 
 - <b> /whitelist \<user\> </b>
    > Gives user whitelist role on discord.
