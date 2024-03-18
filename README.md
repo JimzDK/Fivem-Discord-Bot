@@ -8,7 +8,7 @@ Everything beside prints is writtin in Danish and you'll have to translate it yo
    > Example: Online: 420/1000.
 
 - <b> Attachments only channel </b>
-   > Prevents everything beside attachments (pictures, videos etc.) from being sent in a your choise of channels, ex. for ingame-pictures only channel.
+   > Prevents everything beside attachments (pictures, videos etc.) from being sent in channels of your choise, ex. for ingame-pictures only channel.
 
 # Moderation Commands
 - <b> /clear \<amount\> </b>
@@ -18,21 +18,21 @@ Everything beside prints is writtin in Danish and you'll have to translate it yo
    > Lookup player identifiers such as discord ID, rockstar license etc.
 
 - <b> /supportaccess \<user\> \<channel-no\> </b>
-   > Temporarily give a user access to screenshaere in a support channel (and join, but that's requried after a new discord update). Removes permission after 5 minutes by default.
+   > Temporarily give a user access to screenshare in a support channel (and join, but that's requried after a new discord update). Removes permission after 5 minutes by default.
 
 - <b> /whitelistaccess \<user\> \<channel-no\> </b>
-   > Temporarily give a user access to screenshaere in a whitelist interview channel (and join, but that's requried after a new discord update). Removes permission after 1.5 minutes by default.
+   > Temporarily give a user access to screenshare in a whitelist interview channel (and join, but that's requried after a new discord update). Removes permission after 1.5 minutes by default.
 
 - <b> /tempplate \<type\> </b>
-   > Returns message with application-tempplate for a user to fill out, ex. in a ticket.
+   > Returns application-tempplate message for a user to fill out, ex. in a ticket.
 
 - <b> /whitelist \<user\> </b>
    > Gives user whitelist role on discord.
-   > Also has to be used in a specific because the return message isn't "ephemeral" and to log whitelists.
+   > Also has to be used in a specific channel because the return message isn't "ephemeral" and to log whitelists.
 
 - <b> /unwhitelist \<user\> </b>
    > Removes user's whitelist role on discord.
-   > Also has to be used in a specific because the return message isn't "ephemeral" and to log whitelists.
+   > Also has to be used in a specific channel because the return message isn't "ephemeral" and to log whitelists.
 
 # Requirements
 - [Node.js](https://nodejs.org/en/)
