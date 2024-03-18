@@ -54,7 +54,7 @@ Everything beside prints is writtin in Danish and you'll have to translate it yo
 
 5. Fill out values in `.env` and `config.json` (example below)
 
-6. Go under src/commands and change permissions of all the commands to your liking
+6. Go under src/commands and change permissions of all the commands to your liking (Roles with "Administrator" permission has access to every command by default)
 
 7. Run `start.bat` or use `node src/index.js` in the terminal
 
