@@ -8,7 +8,7 @@ Everything beside prints is writtin in Danish and you'll have to translate it yo
    > Example: Online: 420/1000.
 
 - <b> Attachments only channel </b>
-   > Prevents everything beside attachments (pictures, videos etc.) from being sent in a your choise of channels, ex. for ingame-pictures only channel.
+   > Prevents everything beside attachments (pictures, videos etc.) from being sent in channels of your choise, ex. for ingame-pictures only channel.
 
 # Moderation Commands
 - <b> /clear \<amount\> </b>
