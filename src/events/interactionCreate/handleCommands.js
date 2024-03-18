@@ -1,10 +1,12 @@
 const {PermissionFlagsBits} = require('discord.js');
-const getLocalCommands = require('../../utils/getLocalCommands');
+const GetLocalCommands = require('../../utils/getLocalCommands');
+const Config = require('../../../config.json');
+const Lang = require(`../../locale/${Config.general.lang}.json`);
 
 module.exports = async (client, interaction) => {
     if (!interaction.isChatInputCommand()) return;
     
-    const localCommands = getLocalCommands();
+    const localCommands = GetLocalCommands();
     
     try {
         const commandObject = localCommands.find((cmd) => cmd.name === interaction.commandName);
@@ -18,14 +20,9 @@ module.exports = async (client, interaction) => {
                 return await commandObject.callback(client, interaction);
             }
         }
-        
-        interaction.reply({
-            content: 'Du har ikke adgang til denne kommando.',
-            ephemeral: true,
-        });
-        
+        interaction.reply({ content: Lang.misc.no_access, ephemeral: true});
     } catch (error) {
-        interaction.reply({content: `En fejl opstod: \`${error}\``, ephemeral: true});
+        interaction.reply({content: Lang.misc.error_occurred.replace('<error>', error), ephemeral: true});
         console.log(`There was an error running command \"${interaction.commandName}\": ${error}`);
     }
 };

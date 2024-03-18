@@ -1,0 +1,87 @@
+{
+    "misc": {
+        "activity": "Online: <players>/<maxPlayers>",
+        "activity_offline": "Server Offline...",
+        "no_access": "You do not have access to this.",
+        "error_occurred": "An error occurred: `<error>`",
+        "message_delete_title": "MESSAGE REMOVED",
+        "message_delete_text": "Your message in <#<channelID>> was deleted by the system.\n\nChannel is picture/video only."
+    },
+    "commands": {
+        "clear": {
+            "description": "Delete multiple chat messages.",
+            "options": {
+                "amount": "How many messages do you want to delete?"
+            },
+            "error_max": "A maximum of 100 messages can be deleted.",
+            "error_min": "A minimum of 1 message can be deleted.",
+            "success": "Deleted <amount> messages from the channel."
+        },
+        "lookup": {
+            "description": "Lookup player info from ingame server-id.",
+            "options": {
+                "ingame-id": "Ingame ID"
+            },
+            "server_down": "Seems like the server is down..",
+            "title": "PLAYER LOOKUP (ID: <searchID>)",
+            "text": "Name: <name>\nPing: <ping>\n\n**Identifiers**\n<identifiers>",
+            "player_offline": "Player is not online."
+        },
+        "supportaccess": {
+            "description": "Give a user access to screenshare in a support channel.",
+            "options": {
+                "user": "What user do you want to grant screenshare access?",
+                "channel": "What channel do you want to give access to? (1, 2, 3 etc.)"
+            },
+            "no_channel": "Not a support channel.",
+            "success": "Gave <@<targetUserID>> access to screenshare and join <#<channelID>> for the next <timeLeft> minutes."
+        },
+        "tempplate": {
+            "description": "Make bot reply with application-tempplate.",
+            "options": {
+                "type": "Tempplate to send"
+            },
+            "tempplates": [
+                {
+                    "name": "Example 1",
+                    "reply": "# Example 2\nLine2 here!\nLine3..."
+                },
+                {
+                    "name": "Example 2",
+                    "reply": "# Example 2\nLine2 here!\nLine3..."
+                },
+                {
+                    "name": "Example 3",
+                    "reply": "# Example 3\nLine2 here!\nLine3..."
+                }
+            ]
+        },
+        "unwhitelist": {
+            "description": "Unwhitelist a user.",
+            "options": {
+                "user": "User to remove whitelist from."
+            },
+            "wrong_channel": "This command can only be used in <#<channel>>",
+            "title": "UNWHITELIST",
+            "text": "Removed whitelist from <@<targetUserID>>!\n\nUnwhitelisted by <@<userId>>"
+        },
+        "whitelist": {
+            "description": "Whitelist a user.",
+            "options": {
+                "user": "User to give whitelist."
+            },
+            "wrong_channel": "This command can only be used in <#<channel>>",
+            "title": "WHITELIST",
+            "text": "<@<targetUserID>> was given whitelist!\n\nWhitelisted by <@<userId>>"
+        },
+        "whitelistaccess": {
+            "description": "Give a user access to screenshare in a whitelist-interview channel.",
+            "options": {
+                "user": "What user do you want to grant screenshare access?",
+                "channel": "What channel do you want to give access to? (1, 2, 3 etc.)"
+            },
+            "no_channel": "Not a whitelist channel.",
+            "success": "Gave <@<targetUserID>> access to screenshare and join <#<channelID>> for the next <timeLeft> minutes."
+        }
+    }
+}

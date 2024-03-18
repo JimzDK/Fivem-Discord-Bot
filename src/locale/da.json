@@ -1,0 +1,87 @@
+{
+    "misc": {
+        "activity": "Online: <players>/<maxPlayers>",
+        "activity_offline": "Server Offline...",
+        "no_access": "Dette har du ikke adgang til.",
+        "error_occurred": "Der opstod en fejl: `<error>`",
+        "message_delete_title": "BESKED SLETTET",
+        "message_delete_text": "Din besked i <#<channelID>> blev slettet af systemet.\n\nDu kan kun sende billeder/videoer i denne kanal."
+    },
+    "commands": {
+        "clear": {
+            "description": "Slet et bestemt antal beskeder fra chatten.",
+            "options": {
+                "amount": "Hvor mange beskeder skal slettes?"
+            },
+            "error_max": "Du kan maksimum slette 100 beskeder af gangen.",
+            "error_min": "Du skal minimum slette 1 besked af gangen.",
+            "success": "Slettede <amount> beskeder fra kanalen."
+        },
+        "lookup": {
+            "description": "Søg information op på spiller via. server-ID.",
+            "options": {
+                "ingame-id": "Ingame ID"
+            },
+            "server_down": "Serveren ser ud til at være nede..",
+            "title": "SPILLER LOOKUP (ID: <searchID>)",
+            "text": "Navn: <name>\nPing: <ping>\n\n**Identifiers**\n<identifiers>",
+            "player_offline": "Spilleren er ikke online."
+        },
+        "supportaccess": {
+            "description": "Giv person adgang til skærmdeling i support kanal.",
+            "options": {
+                "user": "Hvilken person skal have adgang til skærmdeling?",
+                "channel": "Hvilken kanal? (1, 2, 3 osv.)"
+            },
+            "no_channel": "Dette er ikke en support kanal.",
+            "success": "<@<targetUserID>> har mulighed for at tilslutte og skærmdele i <#<channelID>> de næste <timeLeft> minutter."
+        },
+        "tempplate": {
+            "description": "Få botten til at skrive en ansøgning skabelon.",
+            "options": {
+                "type": "Hvilken skabelon skal sendes?"
+            },
+            "tempplates": [
+                {
+                    "name": "Example 1",
+                    "reply": "# Example 2\nLine2 here!\nLine3..."
+                },
+                {
+                    "name": "Example 2",
+                    "reply": "# Example 2\nLine2 here!\nLine3..."
+                },
+                {
+                    "name": "Example 3",
+                    "reply": "# Example 3\nLine2 here!\nLine3..."
+                }
+            ]
+        },
+        "unwhitelist": {
+            "description": "Unwhitelist en person.",
+            "options": {
+                "user": "Personen som skal have fjernet whitelist."
+            },
+            "wrong_channel": "Denne kommando kan kun benyttes i <#<channel>>",
+            "title": "UNWHITELIST",
+            "text": "<@<targetUserID>> fik frataget whitelist!\n\nUnwhitelistet af <@<userId>>"
+        },
+        "whitelist": {
+            "description": "Whitelist en person.",
+            "options": {
+                "user": "Personen som skal have tilføjet whitelist."
+            },
+            "wrong_channel": "Denne kommando kan kun benyttes i <#<channel>>",
+            "title": "WHITELIST",
+            "text": "<@<targetUserID>> modtog whitelist!\n\nWhitelistet af <@<userId>>"
+        },
+        "whitelistaccess": {
+            "description": "Giv person adgang til skærmdeling i whitelist kanal.",
+            "options": {
+                "user": "Hvilken person skal have adgang til skærmdeling?",
+                "channel": "Hvilken kanal? (1, 2, 3 osv.)"
+            },
+            "no_channel": "Dette er ikke en whitelist kanal.",
+            "success": "<@<targetUserID>> har mulighed for at tilslutte og skærmdele i <#<channelID>> de næste <timeLeft> minutter."
+        }
+    }
+}

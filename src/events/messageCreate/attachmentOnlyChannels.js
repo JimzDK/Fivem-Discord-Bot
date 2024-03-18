@@ -1,5 +1,6 @@
-const Config = require('../../../config.json');
 const {EmbedBuilder} = require('discord.js');
+const Config = require('../../../config.json');
+const Lang = require(`../../locale/${Config.general.lang}.json`);
 
 module.exports = async (_, message) => {
     const channelsIds = Config.channelsIds.onlyAttachmentsChannels;
@@ -8,8 +9,8 @@ module.exports = async (_, message) => {
             const embed = new EmbedBuilder()
 
             .setColor('#ff1100')
-            .setTitle('BESKED SLETTET')
-            .setDescription(`Din besked i <#${message.channel.id}> blev slettet af systemet.\n\nDu kan udelukkende sende billeder/videoer i denne kanal.`)
+            .setTitle(Lang.misc.message_delete_title)
+            .setDescription(Lang.misc.message_delete_text.replace('<channelID>', message.channel.id))
             .setTimestamp()
             if (Config.general.discordLogo.includes('https://') && Config.general.discordLogo.includes('.com')) {
                 embed.setThumbnail(Config.general.discordLogo);
@@ -17,7 +18,7 @@ module.exports = async (_, message) => {
             await message.delete().catch(err => {
                 console.log(`Error while trying to delete message: ${err}`)
             })
-            message.member.send({embeds: [embed]}).catch(err => {
+            message.member.send({embeds: [embed]}).catch(_ => {
                 return;
             });
         }

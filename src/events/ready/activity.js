@@ -1,10 +1,11 @@
 const { ActivityType } = require('discord.js');
 const Config = require('../../../config.json');
-const request = require('request');
+const Lang = require(`../../locale/${Config.general.lang}.json`);
+const Request = require('request');
 
 module.exports = (client) => {
     function updateActivity() {
-        request.get({
+        Request.get({
             url: `https://servers-frontend.fivem.net/api/servers/single/${Config.general.cfxip}`,
             json: true,
             headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:90.0) Gecko/20100101 Firefox/90.0' }
@@ -20,7 +21,7 @@ module.exports = (client) => {
                 client.user.setPresence({
                     status: Config.general.activity,
                     activities: [{
-                        name: 'Server Offline',
+                        name: Lang.misc.activity_offline,
                         type: ActivityType.Watching
                     }]
                 })
@@ -30,7 +31,9 @@ module.exports = (client) => {
             client.user.setPresence({
                 status: Config.general.activity,
                 activities: [{
-                    name: `Online: ${data.clients}/${data.sv_maxclients}`,
+                    name: Lang.misc.activity
+                    .replace('<players>', data.clients)
+                    .replace('<maxPlayers>', data.sv_maxclients),
                     type: ActivityType.Watching
                 }]
             })
