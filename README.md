@@ -1,8 +1,6 @@
 # FiveM Discord Bot
 Bot was originally made for a Danish roleplay server, written in javascript.
 
-Everything beside prints is writtin in Danish and you'll have to translate it yourself.
-
 # Miscellaneous Features
 - <b> Displays online players as status </b>
    > Example: Online: 420/1000.
