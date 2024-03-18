@@ -15,23 +15,23 @@ module.exports = async (client) => {
             if (existingComamnd) {
                 if (localCommand.deleted) {
                     await applicationCommands.delete(existingComamnd.id);
-                    console.log(`❌ Deleted command ${name}.`);
+                    console.log(`Deleted command \"${name}\".`);
                     continue;
                 }
                 if (areCommandsDifferent(existingComamnd, localCommand)) {
                     await applicationCommands.edit(existingComamnd.id, {description, options});
-                    console.log(`📋 Edited command ${name}.`);
+                    console.log(`Edited command \"${name}\".`);
                 }
             } else {
                 if (localCommand.deleted) {
-                    console.log(`Skipping registering command: ${name}`);
+                    console.log(`Skipping command: \"${name}\" (deleted)`);
                     continue;
                 }
                 await applicationCommands.create({name, description, options});
-                console.log(`✅ Registered command: ${name}.`);
+                console.log(`Registered command: \"${name}\"`);
             }
         }
     } catch (error) {
-        console.log(`Error: ${error}`);
+        console.log(`Error while registering commands: ${error}`);
     };
 };

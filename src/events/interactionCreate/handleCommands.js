@@ -26,6 +26,6 @@ module.exports = async (client, interaction) => {
         
     } catch (error) {
         interaction.reply({content: `En fejl opstod: \`${error}\``, ephemeral: true});
-        console.log(`There was an error running command ${interaction.commandName}: ${error}`);
+        console.log(`There was an error running command \"${interaction.commandName}\": ${error}`);
     }
 };

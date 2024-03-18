@@ -6,9 +6,8 @@ module.exports = {
     deleted: false,
     description: 'Unwhitelist en person',
     roleRequired: [
-        '1049063601618567248', // Support
-        '1073920432916410429', // Whitelist Ansvarlig
-        '1087763060246204598', // Whitelist Modtager
+        'example1', // Admin
+        'example2', // Whitelist Team
     ],
     options: [
         {
@@ -18,24 +17,20 @@ module.exports = {
             type: ApplicationCommandOptionType.User,
         },
     ],
-    callback: async (client, interaction) => {
+    callback: async (_, interaction) => {
         const targetUserId = interaction.options.get('user').value;
         const targetUser = await interaction.guild.members.fetch(targetUserId);
         const whitelistRole = interaction.guild.roles.cache.get(Config.roleIds.whitelistRole);
         if (interaction.channel.id !== Config.channelsIds.whitelistCommands) return interaction.reply({content: `Denne kommando kan kun benyttes i <#${Config.channelsIds.whitelistCommands}>`, ephemeral: true});
-        try {
-            await targetUser.roles.remove(whitelistRole);
-            const embed = new EmbedBuilder()
+        await targetUser.roles.remove(whitelistRole);
+        const embed = new EmbedBuilder()
+        .setTitle('UNWHITELIST')
+        .setDescription(`<@${targetUserId}> fik frataget whitelist!\n\nUnwhitelistet af <@${interaction.member.id}>`)
+        .setTimestamp()
+        if (Config.general.discordLogo.includes('https://') && Config.general.discordLogo.includes('.com')) {
+            embed.setThumbnail(Config.general.discordLogo);
+        };
 
-            .setTitle('UNWHITELIST')
-            .setDescription(`<@${targetUserId}> fik frataget whitelist!\n\nUnwhitelistet af <@${interaction.member.id}>`)
-            .setThumbnail(Config.general.discordLogo)
-            .setTimestamp()
-    
-            await interaction.reply({embeds: [embed]})
-        } catch (error) {
-            interaction.reply({content: `En fejl opstod: \`${error}\``, ephemeral: true});
-            console.log(`Error during command \"unwhitelist\": ${error}`);
-        }
+        interaction.reply({embeds: [embed]});
     },
 };

@@ -7,7 +7,7 @@ module.exports = {
     deleted: false,
     description: 'Søg information op på spiller via. ID',
     roleRequired: [
-        '1049063601618567248', // Support
+        'example1', // Admin
     ],
     options: [
         {
@@ -17,7 +17,7 @@ module.exports = {
             type: ApplicationCommandOptionType.Number,
         },
     ],
-    callback: async (client, interaction) => {
+    callback: async (_, interaction) => {
         const searchID = interaction.options.get('ingame-id').value;
         request.get({
             url: `https://servers-frontend.fivem.net/api/servers/single/${Config.general.cfxip}`,
@@ -37,17 +37,15 @@ module.exports = {
             for (i = 0; i < players.length; i++) {
                 let player = players[i]
                 if (player?.id == searchID) {
-
                     let identifiers = player?.identifiers.toString().split(',').join('\n');
-
                     const embed = new EmbedBuilder()
-            
                     .setColor('#3285a8')
                     .setTitle(`SPILLER LOOKUP (ID: ${searchID})`)
                     .setDescription(`Navn: ${player?.name}\nPing: ${player?.ping}\n\n**Identifiers**\n${identifiers}`)
-                    .setThumbnail(Config.general.discordLogo)
                     .setTimestamp()
-            
+                    if (Config.general.discordLogo.includes('https://') && Config.general.discordLogo.includes('.com')) {
+                        embed.setThumbnail(Config.general.discordLogo);
+                    };
                     return interaction.reply({embeds: [embed], ephemeral: true});
                 }
             }
