@@ -10,6 +10,10 @@ Everything beside prints is writtin in Danish and you'll have to translate it yo
 - <b> Attachments only channel </b>
    > Prevents everything beside attachments (pictures, videos etc.) from being sent in channels of your choise, ex. for ingame-pictures only channel.
 
+- <b> Supports multiple languages </b>
+   > Create custom support for language under locale folder. Change locale used under config.json
+
+
 # Moderation Commands
 - <b> /clear \<amount\> </b>
    > Clear a X amount of messages from a text channel.
@@ -72,6 +76,7 @@ CLIENT_ID = ''
         "cfxip": "3lamjz",
         "activity": "dnd",
         "discordLogo": "https://i.imgur.com/example.png",
+        "lang": "en",
         "RemoveSupportPermAfterMin": 5,
         "RemoveWhitelistPermAfterMin": 1.5
     },
