@@ -31,7 +31,7 @@ module.exports = {
             .replace('<userId>', interaction.member.id)
             )
         .setTimestamp()
-        if (Config.general.discordLogo.includes('https://') && Config.general.discordLogo.includes('.com')) {
+        if (Config.general.discordLogo.includes('https://')) {
             embed.setThumbnail(Config.general.discordLogo);
         };
 

@@ -12,7 +12,7 @@ module.exports = async (_, message) => {
             .setTitle(Lang.misc.message_delete_title)
             .setDescription(Lang.misc.message_delete_text.replace('<channelID>', message.channel.id))
             .setTimestamp()
-            if (Config.general.discordLogo.includes('https://') && Config.general.discordLogo.includes('.com')) {
+            if (Config.general.discordLogo.includes('https://')) {
                 embed.setThumbnail(Config.general.discordLogo);
             };
             await message.delete().catch(err => {

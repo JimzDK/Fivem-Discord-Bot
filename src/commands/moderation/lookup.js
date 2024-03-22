@@ -48,7 +48,7 @@ module.exports = {
                         .replace('<identifiers>', identifiers)
                     )
                     .setTimestamp()
-                    if (Config.general.discordLogo.includes('https://') && Config.general.discordLogo.includes('.com')) {
+                    if (Config.general.discordLogo.includes('https://')) {
                         embed.setThumbnail(Config.general.discordLogo);
                     };
                     return interaction.reply({embeds: [embed], ephemeral: true});
